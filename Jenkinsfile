@@ -1,6 +1,6 @@
 pipeline {
-    //agent none
-	agent any
+    agent none
+	//agent any
     stages {
 	
 	stage('Non-Parallel Stage') {
@@ -26,9 +26,9 @@ pipeline {
                     
                 }
                 stage('Test On Master') {
-                    /*agent {
-                        label "win"
-                    }*/
+                    agent {
+                        label "mock"
+		    }
                     steps {
 			    	sleep 10
 				echo "Task2 on Parallel"
